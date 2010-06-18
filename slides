@@ -1,5 +1,5 @@
 ---
-Node.js in 30 minutes
+Node.js in 30 minutes or less
 
 Mat Schaffer
 Philly.rb, June 21, 2010
@@ -11,7 +11,7 @@ What is Node?
 [picture of "the hot thing"]
 
 ---
-Chome?
+Chome? (and V8?)
 
 ---
 Event Machine?
@@ -25,25 +25,20 @@ JavaScript on top of an event/callback-based system API
 [picture of "huh?"]
 
 ---
-Ruby has lots of calls that block the VM:
+Theory: Lots of time is wasted waiting for IO
 
-* Net::HTTP.get
-* TCPSocket::gethostbyname
-* IO#read
-
----
-Leads to:
-
-* Global interpretter lock
-* Lots of ruby app instances
+* HTTP requests to services
+* Writes to disk
+* Writes to DB
 
 ---
-Node.js has none of that business
+Why not just register a callback so we can keep moving?
 
-[picture of node.js API callbacks]
+   fs.readFile(callback)
+   [add more callback examples]
 
 ---
-Leads to handling high RPS even on one instance
+For web this means handling many RPS even on one instance
 
 [picture of "small and fast"]
 
@@ -65,12 +60,34 @@ Your package manager probably calls it "node"
     $ brew install node
 
 ---
+The basics
+
+---
 FILE:helloworld.js
     var sys = require('sys');
     sys.puts('hello world');
 
     $ node helloworld.js
     hello world
+
+---
+Asynchronous code looks different
+
+    things.each(function(thing, next) {
+      doStuffWith(i);
+      next();
+    });
+
+instead of
+
+    things.each(function(thing) {
+      doStuffWith(i);
+    });
+
+[reference to event machine presentation]
+
+---
+Handling web requests
 
 ---
 FILE:httpserver.js
@@ -82,17 +99,26 @@ FILE:httpserver.js
     }).listen(8000);
 
     $ ./nodeload.js -f -n 100000 -i 10 -c 20 http://localhost:3000/
-    ...
+    ... # load test on a VirtualBox VM
     Requests per second:                    1748.19
-    (Consistently 50% higher than comparable ruby)
+
+---
+Testable?
+
+---
+Sure.
+
+JSpec
+Expresso
+recorderMock.js
 
 ---
 Cool node projects
 
 ---
-
+(http://nodeknockout.com/)
+http://lazeroids.com/
 Express
 Connect
 Fab
 Node load
-
