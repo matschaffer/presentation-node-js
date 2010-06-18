@@ -1,0 +1,98 @@
+---
+Node.js in 30 minutes
+
+Mat Schaffer
+Philly.rb, June 21, 2010
+
+---
+What is Node?
+
+---
+[picture of "the hot thing"]
+
+---
+Chome?
+
+---
+Event Machine?
+
+---
+[picture of chrome] + [picture of event machine]
+
+JavaScript on top of an event/callback-based system API
+
+---
+[picture of "huh?"]
+
+---
+Ruby has lots of calls that block the VM:
+
+* Net::HTTP.get
+* TCPSocket::gethostbyname
+* IO#read
+
+---
+Leads to:
+
+* Global interpretter lock
+* Lots of ruby app instances
+
+---
+Node.js has none of that business
+
+[picture of node.js API callbacks]
+
+---
+Leads to handling high RPS even on one instance
+
+[picture of "small and fast"]
+
+---
+Get Node.js
+
+---
+Compiling from source is straight-forward
+
+    $ git clone git://github.com/ry/node.git
+    $ cd node
+    $ ./configure --prefix=/usr/local
+    $ make
+    $ make install || sudo make install 
+
+---
+Your package manager probably calls it "node"
+
+    $ brew install node
+
+---
+FILE:helloworld.js
+    var sys = require('sys');
+    sys.puts('hello world');
+
+    $ node helloworld.js
+    hello world
+
+---
+FILE:httpserver.js
+    var http = require('http');
+    
+    http.createServer(function (req, res) {
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.end('Hello world\n');
+    }).listen(8000);
+
+    $ ./nodeload.js -f -n 100000 -i 10 -c 20 http://localhost:3000/
+    ...
+    Requests per second:                    1748.19
+    (Consistently 50% higher than comparable ruby)
+
+---
+Cool node projects
+
+---
+
+Express
+Connect
+Fab
+Node load
+

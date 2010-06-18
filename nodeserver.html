@@ -1,0 +1,35 @@
+<html><head><title>nodeload results: Thu Jun 17 2010 23:49:43 GMT-0400 (EDT)</title>
+<script language="javascript" type="text/javascript" src="./flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./flot/jquery.flot.js"></script>
+</head>
+<body>
+<h1>Test Results from Thu Jun 17 2010 23:49:43 GMT-0400 (EDT)</h1>
+<pre>Server:                                 localhost:8000
+HTTP Method:                            GET
+Document Path:                          /
+Concurrency Level:                      20
+Number of requests:                     100000
+Body bytes transferred:                 1200000
+Elapsed time (s):                       57.20
+Requests per second:                    1748.19
+Mean time per request (ms):             10.01
+Time per request standard deviation:    3.02
+
+Percentages of requests served within a certain time (ms)
+  Min: 0
+  Avg: 10.0
+  50%: 10
+  95%: 14
+  99%: 21
+  Max: 44
+</pre><h2>Latency (ms) vs. Time</h2>
+<div id="latency" style="width:800px;height:400px;"></div>
+<h2>Requests Per Second vs. Time</h2>
+<div id="rps" style="width:800px;height:400px;"></div>
+<script id="latencyData" language="javascript" type="text/javascript">
+$(function () { $.plot($("#latency"), [{"label":"average","data":[[1276832926660,0],[1276832936665,"10.6"],[1276832946668,"9.8"],[1276832956666,"10.1"],[1276832966664,"9.6"],[1276832976666,"10.3"]],"points":{"show":true},"lines":{"show":true}},{"label":"median","data":[[1276832926660,0],[1276832936665,11],[1276832946668,10],[1276832956666,10],[1276832966664,10],[1276832976666,10]],"points":{"show":true},"lines":{"show":true}},{"label":"95%","data":[[1276832926660,0],[1276832936665,14],[1276832946668,14],[1276832956666,15],[1276832966664,14],[1276832976666,15]],"points":{"show":true},"lines":{"show":true}},{"label":"99%","data":[[1276832926660,0],[1276832936665,20],[1276832946668,17],[1276832956666,26],[1276832966664,18],[1276832976666,21]],"points":{"show":true},"lines":{"show":true}}], { xaxis: { mode: "time", timeformat: "%H:%M:%S"}, yaxis: {min: 0}, legend: {position: "se", backgroundOpacity: 0} }); });
+</script>
+<script id="rpsData" language="javascript" type="text/javascript">
+$(function () { $.plot($("#rps"), [{"label":"req/s","data":[[1276832926660,0],[1276832936665,"1681.7"],[1276832946668,"1782.8"],[1276832956666,"1715.8"],[1276832966664,"1819.0"],[1276832976666,"1695.5"]],"points":{"show":true},"lines":{"show":true}}], { xaxis: { mode: "time", timeformat: "%H:%M:%S"}, yaxis: {min: 0}, legend: {position: "se", backgroundOpacity: 0} }); });
+</script>
+</body></html>

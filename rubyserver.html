@@ -1,0 +1,35 @@
+<html><head><title>nodeload results: Thu Jun 17 2010 23:56:12 GMT-0400 (EDT)</title>
+<script language="javascript" type="text/javascript" src="./flot/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./flot/jquery.flot.js"></script>
+</head>
+<body>
+<h1>Test Results from Thu Jun 17 2010 23:56:12 GMT-0400 (EDT)</h1>
+<pre>Server:                                 localhost:3000
+HTTP Method:                            GET
+Document Path:                          /
+Concurrency Level:                      20
+Number of requests:                     100000
+Body bytes transferred:                 1200000
+Elapsed time (s):                       100.77
+Requests per second:                    992.39
+Mean time per request (ms):             20.08
+Time per request standard deviation:    6.41
+
+Percentages of requests served within a certain time (ms)
+  Min: 0
+  Avg: 20.1
+  50%: 19
+  95%: 34
+  99%: 44
+  Max: 129
+</pre><h2>Latency (ms) vs. Time</h2>
+<div id="latency" style="width:800px;height:400px;"></div>
+<h2>Requests Per Second vs. Time</h2>
+<div id="rps" style="width:800px;height:400px;"></div>
+<script id="latencyData" language="javascript" type="text/javascript">
+$(function () { $.plot($("#latency"), [{"label":"average","data":[[1276833271788,0],[1276833281793,"20.3"],[1276833291813,"21.0"],[1276833301793,"19.7"],[1276833311794,"19.2"],[1276833321793,"19.7"],[1276833331792,"23.8"],[1276833341793,"19.1"],[1276833351792,"19.7"],[1276833361800,"19.5"],[1276833371792,"19.7"]],"points":{"show":true},"lines":{"show":true}},{"label":"median","data":[[1276833271788,0],[1276833281793,19],[1276833291813,19],[1276833301793,19],[1276833311794,18],[1276833321793,18],[1276833331792,19],[1276833341793,18],[1276833351792,19],[1276833361800,18],[1276833371792,19]],"points":{"show":true},"lines":{"show":true}},{"label":"95%","data":[[1276833271788,0],[1276833281793,34],[1276833291813,35],[1276833301793,33],[1276833311794,33],[1276833321793,34],[1276833331792,45],[1276833341793,33],[1276833351792,33],[1276833361800,33],[1276833371792,33]],"points":{"show":true},"lines":{"show":true}},{"label":"99%","data":[[1276833271788,0],[1276833281793,40],[1276833291813,50],[1276833301793,38],[1276833311794,38],[1276833321793,46],[1276833331792,63],[1276833341793,42],[1276833351792,36],[1276833361800,35],[1276833371792,36]],"points":{"show":true},"lines":{"show":true}}], { xaxis: { mode: "time", timeformat: "%H:%M:%S"}, yaxis: {min: 0}, legend: {position: "se", backgroundOpacity: 0} }); });
+</script>
+<script id="rpsData" language="javascript" type="text/javascript">
+$(function () { $.plot($("#rps"), [{"label":"req/s","data":[[1276833271788,0],[1276833281793,"979.4"],[1276833291813,"947.8"],[1276833301793,"1013.3"],[1276833311794,"1035.2"],[1276833321793,"1016.3"],[1276833331792,"838.2"],[1276833341793,"1041.9"],[1276833351792,"1011.6"],[1276833361800,"1021.2"],[1276833371792,"1015.5"]],"points":{"show":true},"lines":{"show":true}}], { xaxis: { mode: "time", timeformat: "%H:%M:%S"}, yaxis: {min: 0}, legend: {position: "se", backgroundOpacity: 0} }); });
+</script>
+</body></html>
