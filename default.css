@@ -1,0 +1,13 @@
+body, #preso, #preso .slide {
+  background: #422;
+  color: #fff;
+}
+
+.slide {
+  border: none;
+}
+
+.content.bullets h2 {
+  font-size: 4em;
+}
+
