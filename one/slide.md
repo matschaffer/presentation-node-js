@@ -201,6 +201,13 @@ http://extjs.github.com/Connect/
 
 http://github.com/jed/fab
 
+!SLIDE
+
+# Socket.IO
+
+## Node.js Server and In-Browser Client for simplifying realtime message passing.
+## http://socket.io
+
 !SLIDE center
 
 ## Massively multiplayer asteroids!!1!1!!!
