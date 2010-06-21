@@ -216,6 +216,9 @@ http://github.com/jed/fab
 ## Node.js Server and In-Browser Client for simplifying realtime message passing.
 ## http://socket.io
 
+## Faye also looks interesting for this
+## http://faye.jcoglan.com/
+
 !SLIDE center
 
 ## Massively multiplayer asteroids!!1!1!!!
