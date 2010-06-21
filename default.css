@@ -11,3 +11,6 @@ body, #preso, #preso .slide {
   font-size: 4em;
 }
 
+pre.sh_sourceCode {
+  padding: 5px;
+}
