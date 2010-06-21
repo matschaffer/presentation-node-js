@@ -49,6 +49,8 @@ http://icanhascheezburger.com/2008/12/30/funny-pictures-confusion/
     dns.resolve4('www.google.com', callback)
     net.createServer(callback)
 
+## This is already idoimatic in JavaScript
+
 !SLIDE center
 
 ![baby cheetah](smallandfast.jpg)
@@ -88,8 +90,14 @@ http://www.flickr.com/photos/vladdythephotogeek/3431099472/
 
 !SLIDE
 
-## Note the `sys = require('sys')`.
-## Each file is expected to export an object as `module.exports`
+## Note the `sys = require('sys')`
+## Each file is expected to export an interface object like
+
+    @@@ JavaScript
+    module.exports = {
+      sys: function(...) {...}
+    };
+
 ## this comes from CommonJS
 
 !SLIDE
@@ -144,7 +152,6 @@ http://github.com/benschmaus/nodeload
 #Testable?
 
 !SLIDE bullets
-##Sure.
 
 * JSpec w/ recorderMock.js
 * Expresso (has code coverage!)
